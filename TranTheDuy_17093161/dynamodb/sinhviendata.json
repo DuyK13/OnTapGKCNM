@@ -1,0 +1,18 @@
+[
+  {
+    "id": "SV001",
+    "ma_sinhvien": "17093161",
+    "ten_sinhvien": "Trần Thế Duy",
+    "namsinh": "1999/08/20",
+    "ma_lop": "DHKTPM13B",
+    "avatar": ""
+  },
+  {
+    "id": "SV002",
+    "ma_sinhvien": "17093162",
+    "ten_sinhvien": "Trần Thế Mạnh",
+    "namsinh": "1999/08/20",
+    "ma_lop": "DHKTPM13B",
+    "avatar": ""
+  }
+]
