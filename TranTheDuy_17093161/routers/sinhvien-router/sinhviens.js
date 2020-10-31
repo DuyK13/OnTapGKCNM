@@ -7,6 +7,8 @@ require('dotenv').config();
 
 AWS.config.update({
     region: "ap-southeast-1",
+    accessKeyId: process.env.AWS_ID,
+    secretAccessKey: process.env.AWS_PRIVATE
 });
 
 const s3 = new AWS.S3();
@@ -201,6 +203,9 @@ router.get('/', (req, res) => {
     })
 })
 
+
+
+
 // Đọc dữ liệu bảng SinhViens
 router.get('/:id', (req, res) => {
     // Tạo promise để xử lý xoá sinh viên
@@ -238,6 +243,9 @@ router.get('/:id', (req, res) => {
         res.json({ error_code: 0, error });
     })
 })
+
+
+
 
 // Cập nhật sinh viên
 router.post('/update', updateUpload, (req, res) => {

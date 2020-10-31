@@ -1,9 +1,11 @@
 var AWS = require("aws-sdk");
 var fs = require('fs');
+require('dotenv').config({ path: '../.env' });
 
 AWS.config.update({
-    region: "ap-southeast-1",
-    // endpoint: "https://dynamodb.ap-southeast-1.amazonaws.com"
+    region: "ap-southeast-1", // Chọn vị trí theo tài khoản
+    accessKeyId: process.env.AWS_ID,
+    secretAccessKey: process.env.AWS_PRIVATE
 });
 
 var dynamodb = new AWS.DynamoDB();

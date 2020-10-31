@@ -8,8 +8,7 @@
     "start": "nodemon index",
     "create-db": "cd dynamodb && node createTable.js && cd ..",
     "delete-db": "cd dynamodb && node deleteTable.js && cd ..",
-    "load-data": "cd dynamodb && node loadData.js && cd ..",
-    "read-data": "cd dynamodb && node readData.js && cd .."
+    "load-data": "cd dynamodb && node loadData.js && cd .."
   },
   "keywords": [],
   "author": "",
@@ -19,6 +18,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "handlebars-helpers": "^0.10.0",
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
     "nodemon": "^2.0.6",
