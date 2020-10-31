@@ -1,14 +1,18 @@
+/**
+ * Tạo bảng SinhViens
+ */
+
 var AWS = require("aws-sdk");
 
 AWS.config.update({
-    region: "ap-southeast-1",
-    endpoint: "https://dynamodb.ap-southeast-1.amazonaws.com"
+    region: "ap-southeast-1", // Chọn vị trí theo tài khoản
 });
 
 var dynamodb = new AWS.DynamoDB();
 
 /**
- * Cấu hình của bảng
+ * Khởi tạo bảng SinhViens
+ * gồm hai khoá như dưới
  */
 var params = {
     TableName: "SinhViens",
@@ -21,15 +25,18 @@ var params = {
         { AttributeName: "ma_sinhvien", AttributeType: "S" }
     ],
     ProvisionedThroughput: {
-        ReadCapacityUnits: 10,
-        WriteCapacityUnits: 10
+        ReadCapacityUnits: 5,
+        WriteCapacityUnits: 5
     }
 };
 
+/**
+ * Tạo bảng
+ */
 dynamodb.createTable(params, function (err, data) {
     if (err) {
-        console.error("Không thể tạo bảng.\n", JSON.stringify(err, null, 2));
+        console.error("Tạo bảng có lỗi: \n", JSON.stringify(err, null, 2));
     } else {
-        console.log("Tạo bảng thành công. \n", JSON.stringify(data, null, 2));
+        console.log("Tạo bảng thành công: \n", JSON.stringify(data, null, 2));
     }
 });

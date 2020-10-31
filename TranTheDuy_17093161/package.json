@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index"
+    "start": "nodemon index",
+    "create-db": "cd dynamodb && node createTable.js && cd ..",
+    "delete-db": "cd dynamodb && node deleteTable.js && cd ..",
+    "load-data": "cd dynamodb && node loadData.js && cd ..",
+    "read-data": "cd dynamodb && node readData.js && cd .."
   },
   "keywords": [],
   "author": "",

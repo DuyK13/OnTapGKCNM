@@ -3,7 +3,7 @@ var fs = require('fs');
 
 AWS.config.update({
     region: "ap-southeast-1",
-    endpoint: "https://dynamodb.ap-southeast-1.amazonaws.com"
+    // endpoint: "https://dynamodb.ap-southeast-1.amazonaws.com"
 });
 
 var dynamodb = new AWS.DynamoDB();
