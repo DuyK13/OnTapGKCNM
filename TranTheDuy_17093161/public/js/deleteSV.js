@@ -1,9 +1,8 @@
-
 function xoa(id) {
-    var URL = "http://localhost:5000/quanlysinhvien";
     var xoa = confirm("Bạn có chắc chắn xoá?");
+    console.log(URL);
     if (xoa) {
-        $.post(URL + '/delete/' + id, data => {
+        $.post('/quanlysinhvien/delete/' + id, data => {
             if (data) {
                 alert("Xoá thành công");
                 window.location.href = URL;
@@ -17,8 +16,7 @@ function xoa(id) {
 }
 
 function get(id) {
-    var URL = "http://localhost:5000/quanlysinhvien/" + id;
-    fetch(URL).then(response => response.json())
+    fetch("/quanlysinhvien/" + id).then(response => response.json())
         .then(data => {
             if (data.error_code === 1) {
                 $('#idUpdate').val(data.result.id);
