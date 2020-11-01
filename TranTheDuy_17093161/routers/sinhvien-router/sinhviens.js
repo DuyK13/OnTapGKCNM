@@ -95,8 +95,7 @@ router.post('/add', upload, (req, res) => {
 })
 
 // Xoá sinh viên
-router.post('/delete/:id', (req, res) => {
-
+router.delete('/delete/:id', (req, res) => {
     // Tạo promise để xử lý xoá sinh viên
     let getSinhVien = new Promise((resolve, reject) => {
         // Params gồm thông số về id để tìm sinh viên
@@ -154,7 +153,7 @@ router.post('/delete/:id', (req, res) => {
             if (err) {
                 res.status(500).render('error', { title: '500, Internal Server Error', error: err, msg: 'Không xoá được sinh viên', url: req.url });
             } else {
-                res.status(200).redirect('/quanlysinhvien');
+                res.json(data);
             }
         })
     })

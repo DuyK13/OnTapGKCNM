@@ -1,15 +1,20 @@
 function xoa(id) {
     var xoa = confirm("Bạn có chắc chắn xoá?");
-    console.log(URL);
+    var URL = "/quanlysinhvien/delete/";
     if (xoa) {
-        $.post('/quanlysinhvien/delete/' + id, data => {
-            if (data) {
+        fetch(URL + id, {
+            method: "DELETE",
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
                 alert("Xoá thành công");
-                window.location.href = URL;
-            } else {
-                alert("Xoá không thành công");
-            }
-        });
+                window.location.href = "/quanlysinhvien";
+            })
+            .catch(err => {
+                console.error(err);
+                alert("Xoá thất bại");
+            })
     } else {
         alert("Huỷ xoá");
     }
